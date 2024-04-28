@@ -4,24 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Markdown Generator</title>
-<style>
-    table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-    input[type="text"], textarea {
-        width: 95%; /* Adjusts width within table cell */
-    }
-</style></head>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        input[type="text"], textarea {
+            width: 95%; /* Adjusts width within table cell */
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
 <body>
     <h1>Markdown Generator</h1>
     <form id="markdownForm">
         <table>
+            <tr>
+                <th colspan="2">Summary</th>
+            </tr>
             <tr>
                 <td><label for="title">Title:</label></td>
                 <td><input type="text" id="title" name="title" placeholder="A concise title for the issue." required></td>
@@ -35,10 +42,21 @@
                 <td><textarea id="symptoms" rows="4" cols="50" placeholder="Detailed description of the issue and its symptoms."></textarea></td>
             </tr>
             <tr>
+                <th colspan="2">Investigation</th>
+            </tr>
+            <tr>
                 <td><label for="steps">Steps to Reproduce:</label></td>
                 <td><textarea id="steps" rows="4" cols="50" placeholder="Detailed steps to reproduce the issue."></textarea></td>
             </tr>
             <!-- Add more rows for additional fields -->
+            <tr>
+                <th colspan="2">Resolution</th>
+            </tr>
+            <!-- Fields for resolution -->
+            <tr>
+                <th colspan="2">Preventive Measures</th>
+            </tr>
+            <!-- Fields for preventive measures -->
         </table>
         <button type="button" onclick="generateMarkdown()">Generate</button>
     </form>
