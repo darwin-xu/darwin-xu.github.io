@@ -12,16 +12,16 @@ function generateMarkdown() {
 ** Symptoms: ${symptoms.replace(/\n/g, '\n** ')}
 # *Investigation*
 ** Steps to Reproduce: ${steps.replace(/\n/g, '\n** ')}
-** Data Analysis: 
-** Root Cause: 
-** Contributing Factors: 
+** Data Analysis: ${analysis.replace(/\n/g, '\n** ')}
+** Root Cause: ${rootcause.replace(/\n/g, '\n** ')}
+** Contributing Factors: ${factors.replace(/\n/g, '\n** ')}
 # *Resolution*
-** Workaround: 
-** Solution Implemented: 
+** Workaround: ${workaround.replace(/\n/g, '\n** ')}
+** Solution Implemented: ${solution.replace(/\n/g, '\n** ')}
 # *Preventive Measures*
-** Lessons Learned: 
-** Future Action Items: 
-** Prevention: 
+** Lessons Learned: ${lesson.replace(/\n/g, '\n** ')}
+** Future Action Items: ${future.replace(/\n/g, '\n** ')}
+** Prevention: ${prevention.replace(/\n/g, '\n** ')}
     `;
 
     // Set output
