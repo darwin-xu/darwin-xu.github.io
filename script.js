@@ -3,6 +3,14 @@ function generateMarkdown() {
     const affectedComponent = document.getElementById('affectedComponent').value;
     const symptoms = document.getElementById('symptoms').value;
     const steps = document.getElementById('steps').value;
+    const analysis = document.getElementById('analysis').value;
+    const rootcause = document.getElementById('rootcause').value;
+    const factors = document.getElementById('factors').value;
+    const workaround = document.getElementById('workaround').value;
+    const solution = document.getElementById('solution').value;
+    const lesson = document.getElementById('lesson').value;
+    const future = document.getElementById('future').value;
+    const prevention = document.getElementById('prevention').value;
 
     // Build the markdown text
     let markdownText = `
