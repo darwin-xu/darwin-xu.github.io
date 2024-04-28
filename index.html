@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markdown Generator</title>
+    <title>RCA Generator</title>
     <style>
         table {
             width: 100%;
@@ -23,8 +23,8 @@
     </style>
 </head>
 <body>
-    <h1>Markdown Generator</h1>
-    <form id="markdownForm">
+    <h1>RCA Generator</h1>
+    <form id="RCAForm">
         <table>
             <tr>
                 <th colspan="2">Summary</th>
@@ -87,7 +87,7 @@
                 <td><textarea id="prevention" rows="4" cols="50" placeholder="Specific steps or measures to prevent recurrence."></textarea></td>
             </tr>
         </table>
-        <button type="button" onclick="generateMarkdown()">Generate</button>
+        <button type="button" onclick="generateRCA()">Generate</button>
     </form>
     <textarea id="output" rows="20" cols="50" readonly></textarea>
     <button onclick="copyToClipboard()">Copy to Clipboard</button>
