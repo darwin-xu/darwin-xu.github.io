@@ -48,15 +48,44 @@
                 <td><label for="steps">Steps to Reproduce:</label></td>
                 <td><textarea id="steps" rows="4" cols="50" placeholder="Detailed steps to reproduce the issue."></textarea></td>
             </tr>
-            <!-- Add more rows for additional fields -->
+            <tr>
+                <td><label for="analysis">Data Analysis:</label></td>
+                <td><textarea id="analysis" rows="4" cols="50" placeholder="Summary of data/logs analysis that led to identifying the cause."></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="rootcause">Root Cause:</label></td>
+                <td><textarea id="rootcause" rows="4" cols="50" placeholder="The fundamental reason for the issue."></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="factors">Contributing Factors:</label></td>
+                <td><textarea id="factors" rows="4" cols="50" placeholder="Other contributing factors that might not be the primary cause but played a role."></textarea></td>
+            </tr>
             <tr>
                 <th colspan="2">Resolution</th>
             </tr>
-            <!-- Fields for resolution -->
+            <tr>
+                <td><label for="workaround">Workaround:</label></td>
+                <td><textarea id="workaround" rows="4" cols="50" placeholder="Detail any temporary workaround implemented."></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="solution">Solution Implemented:</label></td>
+                <td><textarea id="solution" rows="4" cols="50" placeholder="Description of the fix solution."></textarea></td>
+            </tr>
             <tr>
                 <th colspan="2">Preventive Measures</th>
             </tr>
-            <!-- Fields for preventive measures -->
+            <tr>
+                <td><label for="lesson">Lessons Learned:</label></td>
+                <td><textarea id="lesson" rows="4" cols="50" placeholder="Insights or lessons learned from the issue and its resolution."></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="future">Future Action Items:</label></td>
+                <td><textarea id="future" rows="4" cols="50" placeholder="Any follow-up actions or improvements needed."></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="prevention">Prevention:</label></td>
+                <td><textarea id="prevention" rows="4" cols="50" placeholder="Specific steps or measures to prevent recurrence."></textarea></td>
+            </tr>
         </table>
         <button type="button" onclick="generateMarkdown()">Generate</button>
     </form>
