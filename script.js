@@ -1,4 +1,4 @@
-function generateMarkdown() {
+function generateRCA() {
     const title = document.getElementById('title').value;
     const affectedComponent = document.getElementById('affectedComponent').value;
     const symptoms = document.getElementById('symptoms').value;
@@ -12,28 +12,39 @@ function generateMarkdown() {
     const future = document.getElementById('future').value;
     const prevention = document.getElementById('prevention').value;
 
-    // Build the markdown text
-    let markdownText = `
+    // Function to format text based on single or multiple lines
+    function formatText(text) {
+        if (text.includes('\n')) {
+            // If the text contains new lines, wrap it in code tags
+            return `{code:java}${text}{code}`;
+        } else {
+            // If single line, return as is
+            return text;
+        }
+    }
+
+    // Build the RCA text
+    let RCAText = `
 # *Summary*
 ** Title: ${title}
 ** Affected Component/Product: ${affectedComponent}
-** Symptoms: ${symptoms.replace(/\n/g, '\n** ')}
+** Symptoms: ${formatText(symptoms)}
 # *Investigation*
-** Steps to Reproduce: ${steps.replace(/\n/g, '\n** ')}
-** Data Analysis: ${analysis.replace(/\n/g, '\n** ')}
-** Root Cause: ${rootcause.replace(/\n/g, '\n** ')}
-** Contributing Factors: ${factors.replace(/\n/g, '\n** ')}
+** Steps to Reproduce: ${formatText(steps)}
+** Data Analysis: ${formatText(analysis)}
+** Root Cause: ${formatText(rootcause)}
+** Contributing Factors: ${formatText(factors)}
 # *Resolution*
-** Workaround: ${workaround.replace(/\n/g, '\n** ')}
-** Solution Implemented: ${solution.replace(/\n/g, '\n** ')}
+** Workaround: ${formatText(workaround)}
+** Solution Implemented: ${formatText(solution)}
 # *Preventive Measures*
-** Lessons Learned: ${lesson.replace(/\n/g, '\n** ')}
-** Future Action Items: ${future.replace(/\n/g, '\n** ')}
-** Prevention: ${prevention.replace(/\n/g, '\n** ')}
+** Lessons Learned: ${formatText(lesson)}
+** Future Action Items: ${formatText(future)}
+** Prevention: ${formatText(prevention)}
     `;
 
     // Set output
-    document.getElementById('output').value = markdownText;
+    document.getElementById('output').value = RCAText;
 }
 
 function copyToClipboard() {
