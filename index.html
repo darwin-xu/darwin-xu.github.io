@@ -1,3 +1,18 @@
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    input[type="text"], textarea {
+        width: 95%; /* Adjusts width within table cell */
+    }
+</style>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,24 +23,25 @@
 <body>
     <h1>Markdown Generator</h1>
     <form id="markdownForm">
-        <div>
-            <label for="title">Title:</label>
-            <input type="text" id="title" name="title" placeholder="A concise title for the issue." required>
-        </div>
-        <div>
-            <label for="affectedComponent">Affected Component/Product:</label>
-            <input type="text" id="affectedComponent" placeholder="Specific component or product affected.">
-        </div>
-        <div>
-            <label for="symptoms">Symptoms:</label>
-            <textarea id="symptoms" rows="4" cols="50" placeholder="Detailed description of the issue and its symptoms."></textarea>
-        </div>
-        <!-- Additional fields with textareas for multiline input -->
-        <div>
-            <label for="steps">Steps to Reproduce:</label>
-            <textarea id="steps" rows="4" cols="50" placeholder="Detailed steps to reproduce the issue."></textarea>
-        </div>
-
+        <table>
+            <tr>
+                <td><label for="title">Title:</label></td>
+                <td><input type="text" id="title" name="title" placeholder="A concise title for the issue." required></td>
+            </tr>
+            <tr>
+                <td><label for="affectedComponent">Affected Component/Product:</label></td>
+                <td><input type="text" id="affectedComponent" placeholder="Specific component or product affected."></td>
+            </tr>
+            <tr>
+                <td><label for="symptoms">Symptoms:</label></td>
+                <td><textarea id="symptoms" rows="4" cols="50" placeholder="Detailed description of the issue and its symptoms."></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="steps">Steps to Reproduce:</label></td>
+                <td><textarea id="steps" rows="4" cols="50" placeholder="Detailed steps to reproduce the issue."></textarea></td>
+            </tr>
+            <!-- Add more rows for additional fields -->
+        </table>
         <button type="button" onclick="generateMarkdown()">Generate</button>
     </form>
     <textarea id="output" rows="20" cols="50" readonly></textarea>
