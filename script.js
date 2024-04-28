@@ -23,25 +23,34 @@ function generateRCA() {
         }
     }
 
+    // Function to create a line only if the input is not empty
+    function createLine(label, value) {
+        if (value.trim() !== '') {
+            return `** ${label}: ${formatText(value)}\n`;
+        }
+        return '';
+    }
+
     // Build the RCA text
-    let RCAText = `
-# *Summary*
-** Title: ${title}
-** Affected Component/Product: ${affectedComponent}
-** Symptoms: ${formatText(symptoms)}
-# *Investigation*
-** Steps to Reproduce: ${formatText(steps)}
-** Data Analysis: ${formatText(analysis)}
-** Root Cause: ${formatText(rootcause)}
-** Contributing Factors: ${formatText(factors)}
-# *Resolution*
-** Workaround: ${formatText(workaround)}
-** Solution Implemented: ${formatText(solution)}
-# *Preventive Measures*
-** Lessons Learned: ${formatText(lesson)}
-** Future Action Items: ${formatText(future)}
-** Prevention: ${formatText(prevention)}
-    `;
+    let RCAText = `# *Summary*\n`;
+    RCAText += createLine('Title', title);
+    RCAText += createLine('Affected Component/Product', affectedComponent);
+    RCAText += createLine('Symptoms', symptoms);
+
+    RCAText += `# *Investigation*\n`;
+    RCAText += createLine('Steps to Reproduce', steps);
+    RCAText += createLine('Data Analysis', analysis);
+    RCAText += createLine('Root Cause', rootcause);
+    RCAText += createLine('Contributing Factors', factors);
+
+    RCAText += `# *Resolution*\n`;
+    RCAText += createLine('Workaround', workaround);
+    RCAText += createLine('Solution Implemented', solution);
+
+    RCAText += `# *Preventive Measures*\n`;
+    RCAText += createLine('Lessons Learned', lesson);
+    RCAText += createLine('Future Action Items', future);
+    RCAText += createLine('Prevention', prevention);
 
     // Set output
     document.getElementById('output').value = RCAText;
