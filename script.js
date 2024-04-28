@@ -1,14 +1,17 @@
 function generateMarkdown() {
     const title = document.getElementById('title').value;
+    const affectedComponent = document.getElementById('affectedComponent').value;
+    const symptoms = document.getElementById('symptoms').value;
+    const steps = document.getElementById('steps').value;
 
-    // Construct markdown text
+    // Build the markdown text
     let markdownText = `
 # *Summary*
 ** Title: ${title}
-** Affected Component/Product: 
-** Symptoms: 
+** Affected Component/Product: ${affectedComponent}
+** Symptoms: ${symptoms.replace(/\n/g, '\n** ')}
 # *Investigation*
-** Steps to Reproduce: 
+** Steps to Reproduce: ${steps.replace(/\n/g, '\n** ')}
 ** Data Analysis: 
 ** Root Cause: 
 ** Contributing Factors: 
